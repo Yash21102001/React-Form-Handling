@@ -5,11 +5,11 @@ import Login from './Login';
 
 function FormController() {
 
-  const [isLogin, setLoginData] = useState(true);
+  const [isLogin, setIsLogin] = useState(true);
   const [userCredentials, setUserCredentials] = useState(null);
   const [userData, setUserData] = useState(null);
 
-  const handleFormSwitch = (data) => {
+  const handleFormSubmit = (data) => {
     if (isLogin) {
       setUserData(data);
     }else{
@@ -24,12 +24,22 @@ function FormController() {
       marginTop: "100px",}}
       >
        {userData ? (
-        <h2>Welcome {userData.email}</h2>
+        <h2>Welcome 👋{userData.email}</h2>
       ) : isLogin ? (
-        <LoginForm onSubmit={handleFormSubmit} credentials={userCredentials} />
+        <Login onSubmit={handleFormSubmit} credentials={userCredentials} />
       ) : (
-        <SignupForm onSubmit={handleFormSubmit} />
+        <Signup onSubmit={handleFormSubmit} />
       )}
+
+<button style={{marginTop: "20px",
+            textDecoration: "underline",
+            background: "none",
+            border: "none",}} onClick={() => setIsLogin(!isLogin)}>
+        {isLogin
+          ? "Dont have an account?  Sing-up"
+          : "Already have an account? Login"}
+      </button>
+
     </div>
   )
 }
