@@ -33,6 +33,9 @@ function Signup({ onSubmit }) {
         borderRadius: '10px',
         backgroundColor: 'black',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        position: "absolute",
+        top: "70px",
+        right: "604px",
       }}
     >
       <h2 style={{ textAlign: 'center', color: 'white' }}>Signup</h2>

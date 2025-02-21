@@ -41,6 +41,9 @@ function FormController() {
           border: 'none',
           color: '#007bff',
           cursor: 'pointer',
+          zIndex: '1',
+          position: 'absolute',
+          bottom: '10px',
         }}
         onClick={() => setIsLogin(!isLogin)}
       >
